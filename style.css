@@ -1,0 +1,354 @@
+@import url('https://fonts.googleapis.com/css2?family=Fasthand&family=Kdam+Thmor+Pro&family=Poppins:wght@200;300;400;500;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(137, 43, 226, 0.479);
+    flex-direction: column;
+
+}
+.container{
+    display: grid;
+    grid-template-columns:75px 75px 75px 75px 75px;
+    gap: 1px;
+    background-color: #00DBDE;
+    background-image: linear-gradient(90deg, #00DBDE 0%, #FC00FF 100%);
+    box-shadow: 0 0 10px rgb(0, 0, 0);
+
+}
+.container .ballon{
+    width: 75px;
+    height: 100px;
+    border: 3px solid rgba(66, 16, 1, 0.521);
+    background-image: url("images/balloon1.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+    transition: 1s ease-in-out;
+}
+.ball{
+    width: 30px;
+    height: 30px;
+    background-image: url("images/beach-ball.png");
+    position: absolute;
+    top: 80vh;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    transition: 5s;
+    background-position: center;
+    background-size: contain;
+    animation: rotate 1s linear infinite;
+
+}
+.ball-throw{
+    transition: 1s;
+    left: 300px;
+    top: 100px;
+}
+@keyframes rotate {
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+    
+}
+
+.overlay{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.808);
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    left: 0;
+    top: 0;
+    transition: 0.5s ease-in-out;
+}
+.overlay-show{
+    transition: 0.5s ease-in-out;
+    opacity: 1;
+    pointer-events: all;
+    z-index: 400;
+}
+.modal{
+    width: 300px;
+    height: 350px;
+    background-color: #8BC6EC;
+    background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    border-radius: 5px;
+    transition: 0.5s ease-in-out;
+   
+}
+.message{
+    font-family: 'Kdam Thmor Pro', sans-serif;
+ 
+}
+.color-attempt{
+    font-family: 'Kdam Thmor Pro', sans-serif !important;
+    font-size: 12px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+ 
+}
+button{
+    font-family: 'Fasthand', cursive !important;
+}
+.modal-show{
+    transition: 0.5s ease-in-out;
+    pointer-events: all;
+    opacity: 1;
+    z-index: 500;
+}
+.icon-mac{
+    width: 100%;
+    height: 50px;
+    display: flex;
+}
+.icon-mac .icon{
+    margin-top: 5px;
+    margin-left: 5px;
+    width: 20px;
+    height: 20px;
+    background-color: green;
+    border-radius: 50%;
+    box-shadow: 0 0 4px black;
+    cursor: pointer;
+}
+.icon-mac .red{
+    background-color: red;
+}
+.icon-mac .orange{
+    background-color: orange;
+}
+.btn{
+    margin-top: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    background-color: #08AEEA;
+background-image: linear-gradient(0deg, #08AEEA 0%, #2AF598 100%);
+box-shadow: 0 0 5px black;
+cursor: pointer;
+
+}
+.btn:hover{
+    background-color: #F4D03F;
+background-image: linear-gradient(132deg, #F4D03F 0%, #16A085 100%);
+
+}
+.btn:focus{
+    outline: 1px solid rgba(0, 247, 255, 0.685);
+    box-shadow: 0 0 10px rgb(4, 5, 4);
+}
+
+.useful-btn{
+    width: 375px;
+    display:flex;
+    justify-content: space-between;
+}
+.p-community{
+    margin-top: 20px;
+}
+.community a{
+    font-size: 25px;
+}
+.p-developer{
+    font-size: 10px;
+    margin-top: 100px;
+    color: rgb(18, 18, 212);
+    text-shadow: 0 0 2px black;
+}
+.modal-tell h2,p,b{
+    font-family: 'Fasthand', cursive !important;
+}
+.modal-tell h2{
+    text-decoration:underline;
+}
+.note{
+    margin-top: 10px;
+    text-align: center;
+    font-size: 12px;
+}
+.modal-all-gift h2{
+    font-family: 'Fasthand', cursive !important;
+}
+.modal-all-gift p{
+    font-family: 'Kdam Thmor Pro', sans-serif !important;
+}
+.all-gift{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    overflow: auto;
+    scroll-behavior: smooth;
+    border-top: 1px solid rgba(0, 0, 0, 0.329);
+}
+.all-gift::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  .all-gift::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  .all-gift::-webkit-scrollbar-thumb {
+    background: rgb(56, 83, 202); 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  .all-gift::-webkit-scrollbar-thumb:hover {
+    background: #6e80d1; 
+  }
+  .block img{
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+  }
+.modal-gift h2{
+    font-family: 'Fasthand', cursive !important;
+}
+.modal-gift p{
+    font-family: 'Kdam Thmor Pro', sans-serif !important;
+}
+.modal-gift a{
+    font-family: 'Fasthand', cursive !important;
+    text-decoration: none;
+    color: black;
+}
+.game-title{
+    position: absolute;
+    width: 300px;
+    height: 100px;
+    background-color: #00DBDE;
+    background-image: linear-gradient(90deg, #00DBDE 0%, #FC00FF 100%);
+    
+    box-shadow: 3px 12px 31px -8px rgba(0,0,0,0.68);
+-webkit-box-shadow: 3px 12px 31px -8px rgba(0,0,0,0.68);
+-moz-box-shadow: 3px 12px 31px -8px rgba(0,0,0,0.68);
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    animation: color 5s linear infinite;
+}
+@keyframes  color {
+    0%{
+        filter: hue-rotate(0deg);
+    }
+    100%{
+        filter: hue-rotate(360deg);
+    }
+    
+}
+
+.game-title h3{
+    font-family: 'Fasthand', cursive !important;
+}
+
+.spinner-overlay{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.76);
+    z-index: 1000;
+    transition: 0.5s ease-in-out;
+}
+.lds-ripple {
+    display: inline-block;
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    left: 50%;
+    top: 50%;
+    z-index: 2000;
+    transform: translate(-50%,-50%);
+  }
+  .lds-ripple div {
+    position: absolute;
+    border: 4px solid #fff;
+    opacity: 1;
+    border-radius: 50%;
+    animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+  }
+  .lds-ripple div:nth-child(2) {
+    animation-delay: -0.5s;
+  }
+  @keyframes lds-ripple {
+    0% {
+      top: 36px;
+      left: 36px;
+      width: 0;
+      height: 0;
+      opacity: 0;
+    }
+    4.9% {
+      top: 36px;
+      left: 36px;
+      width: 0;
+      height: 0;
+      opacity: 0;
+    }
+    5% {
+      top: 36px;
+      left: 36px;
+      width: 0;
+      height: 0;
+      opacity: 1;
+    }
+    100% {
+      top: 0px;
+      left: 0px;
+      width: 72px;
+      height: 72px;
+      opacity: 0;
+    }
+  }
+  
+
+
+@media only screen and (max-width: 500px) {
+    .container{
+        transform: scale(0.8);
+    }
+    body{
+        background-color: #6e80d1;
+    }
+    .useful-btn{
+        width:300px ;
+    
+    }
+   
+  }
